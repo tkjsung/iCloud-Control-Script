@@ -1,2 +1,0 @@
-.DS_Store
-iCloud-Control-Script/.DS_Store
