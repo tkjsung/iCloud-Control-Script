@@ -62,8 +62,6 @@ class icloud_evict{
             } else {
                 self.fileURLs.append(fileURL)
             }
-            
-            self.fileURLs.append(fileURL)
         }
         
         NSLog("Items to evict: %@", "\(fileURLs.count)")
