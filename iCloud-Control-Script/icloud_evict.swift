@@ -54,9 +54,11 @@ class icloud_evict{
             }
             
             if isDirectory {
-                if name == "_extras" {
-                    directoryEnumerator.skipDescendants()
-                }
+                // Uncomment below to skip certain directories' files
+//                if name == "_extras" {
+//                    directoryEnumerator.skipDescendants()
+//                }
+                continue
             } else {
                 self.fileURLs.append(fileURL)
             }
