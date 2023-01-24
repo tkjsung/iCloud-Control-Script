@@ -47,8 +47,8 @@ class icloud_evict{
         
         for case let fileURL as URL in directoryEnumerator {
             guard let resourceValues = try? fileURL.resourceValues(forKeys: resourceKeys),
-                let isDirectory = resourceValues.isDirectory,
-                let name = resourceValues.name
+                let isDirectory = resourceValues.isDirectory//,
+//                let name = resourceValues.name
                 else {
                     continue
             }
