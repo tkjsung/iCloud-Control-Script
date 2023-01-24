@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "31D55E89272F7EF200B643A2"
-               BuildableName = "iCloud-Control-Script"
+               BuildableName = "icloud-control-script"
                BlueprintName = "iCloud-Control-Script"
                ReferencedContainer = "container:iCloud-Control-Script.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "31D55E89272F7EF200B643A2"
-            BuildableName = "iCloud-Control-Script"
+            BuildableName = "icloud-control-script"
             BlueprintName = "iCloud-Control-Script"
             ReferencedContainer = "container:iCloud-Control-Script.xcodeproj">
          </BuildableReference>
@@ -63,7 +63,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "31D55E89272F7EF200B643A2"
-            BuildableName = "iCloud-Control-Script"
+            BuildableName = "icloud-control-script"
             BlueprintName = "iCloud-Control-Script"
             ReferencedContainer = "container:iCloud-Control-Script.xcodeproj">
          </BuildableReference>
