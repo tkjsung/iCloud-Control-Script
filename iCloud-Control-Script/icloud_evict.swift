@@ -9,6 +9,7 @@ import Foundation
 import FinderSync
 
 class icloud_evict{
+    var evict_total:Int, evict_succ:Int, evict_fail:Int
     var dir:String
     var fileURLs:[URL]
     let fm = FileManager()
@@ -17,6 +18,9 @@ class icloud_evict{
     init() {
         dir = ""
         fileURLs = []
+        evict_total = 0
+        evict_succ = 0
+        evict_fail = 0
     }
     
     func get_input(){
@@ -31,9 +35,9 @@ class icloud_evict{
         // FileManager: See if the given directory/file exists.
         let exist = self.fm.fileExists(atPath: dir)
         if exist == false {
-            print("The input \"\(self.dir)\" is not a valid filepath. Try again.\n\n############")
+            NSLog("The input \"\(self.dir)\" is not a valid filepath. Try again.\n\n############")
         } else {
-            print("The entered directory exists. Attempting file eviction from local drive.")
+            NSLog("The entered directory exists. Attempting file eviction from local drive.")
         }
         return exist
     }
@@ -64,7 +68,8 @@ class icloud_evict{
             }
         }
         
-        NSLog("Items to evict: %@", "\(fileURLs.count)")
+        NSLog("Items to evict: \(fileURLs.count)")
+        self.evict_total = fileURLs.count
         
 //        for (index, item) in self.fileURLs.enumerated(){
 //            print(index, ": ", item)
@@ -73,18 +78,26 @@ class icloud_evict{
     }
 
     func evict_urls(){
-        NSLog("removing locally downloaded iCloud files.")
-        for target in self.fileURLs {
-            NSLog("REQUESTED: Local removal of %@", "\(target)")
-            
-            do {
-                try fm.evictUbiquitousItem(at: target)
-                NSLog("EVICT SUCCESS: %@", "\(target)")
-            } catch {
-                NSLog("EVICT FAILED: %@", "\(target)", "failed with error %@", "\(error)") // I'm not sure if this will throw exception.
-            }
+        if self.evict_total == 0{
+            NSLog("\n############\nNo files to evict. Exit program.\n############")
+            return
         }
-        
-        print("############\nProcess complete.\n############")
+        else{
+            NSLog("Removing locally downloaded iCloud files.")
+            for target in self.fileURLs {
+                NSLog("REQUESTED: Local removal of %@", "\(target)")
+                do {
+                    try fm.evictUbiquitousItem(at: target)
+                    NSLog("EVICT SUCCESS: %@", "\(target)")
+                    self.evict_succ += 1
+                } catch {
+                    NSLog("EVICT FAILED: %@", "\(target)", "failed with error %@", "\(error)") // I'm not sure if this will throw exception.
+                    self.evict_fail += 1
+                }
+            }
+            NSLog("EVICT_TOTAL: \(self.evict_total); EVICT_SUCC: \(self.evict_succ); EVICT_FAIL: \(self.evict_fail)")
+            print("############\nProcess complete.")
+            print("* Total files to evict: \(self.evict_total).\n* Successfully evicted: \(self.evict_succ).\n* Failed to evict: \(self.evict_fail).\n############")
+        }
     }
 }
