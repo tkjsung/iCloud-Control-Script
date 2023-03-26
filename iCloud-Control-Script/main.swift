@@ -4,18 +4,6 @@
 //
 //  Created by Tom Sung on 2021-10-31.
 //
-//  ############################
-//  About this project/script
-//
-//  This script was created in an attempt to replicate Robbert Brandsma's (Obbut) GitHub project iCloud Control, available here: https://github.com/Obbut/iCloud-Control. The developer of said project deemed it unnecessary to continue developing the Finder extension as Apple has implemented the download/remove local file feature in macOS Catalina (macOS 10.15), which at the time is built for Intel-based Macs. In other words, the Finder extension runs Intel x86 instruction code. In the future, though, Apple will remove support for x86 applications, which will render the iCloud Control extension unusable. To ensure I personally can continue to use a form of iCloud Control, I created this script.
-//
-//  Apple's solution is not ideal for removing local iCloud files. If an iCloud folder has a non-zero amount of downloaded files, it is not possible to remove local copies of the iCloud files by using the secondary options (right click). One would need to click the "Download Now" button to download the entire folder before the "Remove Download" button would appear. Alternatively, downloads can be removed by visiting each file manually, which is tedious. This script solves this problem; local iCloud files can be removed without downloading the entire folder or manually removing individual files.
-//
-//  As I have no expertise in macOS app development and I am personally not from a software background, I did not know how to modify and build the iCloud Control Finder extension for Universal/Apple Silicon (it could be really simple for all I know). Therefore, I opted to piece together this command line tool, which is called iCloud Control Script. This script's only functionality is removing local copies of iCloud files, which is the function I used the most.
-//
-//  There are three files, other than the project file, in this Xcode project folder. I couldn't figure out how to make another file the "main" file, so main.swift calls on the class I wrote in icloud_evict.swift to enable the remove local file functionality. The last file, testing.swift, is simply where I dumped all the testing code I used.
-//
-//  ############################
 
 import Foundation
 import FinderSync
@@ -23,6 +11,7 @@ import FinderSync
 var dir_exist = false
 var Evict = icloud_evict()
 
+// If filepath does not exist, get user input again.
 while dir_exist == false{
     Evict.get_input()
     dir_exist = Evict.verify_directory()
