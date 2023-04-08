@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31047ACE29E12A1800CD3221 /* run_terminal_cmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31047ACD29E12A1800CD3221 /* run_terminal_cmd.swift */; };
 		31BB9B06297884B700D640C2 /* icloud_evict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB9B05297884B700D640C2 /* icloud_evict.swift */; };
 		31BB9B072978893800D640C2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D55E8D272F7EF200B643A2 /* main.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		31047ACD29E12A1800CD3221 /* run_terminal_cmd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = run_terminal_cmd.swift; sourceTree = "<group>"; };
 		31BB9B05297884B700D640C2 /* icloud_evict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = icloud_evict.swift; sourceTree = "<group>"; };
 		31BB9B082978C33F00D640C2 /* testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testing.swift; sourceTree = "<group>"; };
 		31D55E8A272F7EF200B643A2 /* icloud-control-script */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "icloud-control-script"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				31D55E8D272F7EF200B643A2 /* main.swift */,
+				31047ACD29E12A1800CD3221 /* run_terminal_cmd.swift */,
 				31BB9B05297884B700D640C2 /* icloud_evict.swift */,
 				31BB9B082978C33F00D640C2 /* testing.swift */,
 			);
@@ -127,6 +130,7 @@
 			files = (
 				31BB9B072978893800D640C2 /* main.swift in Sources */,
 				31BB9B06297884B700D640C2 /* icloud_evict.swift in Sources */,
+				31047ACE29E12A1800CD3221 /* run_terminal_cmd.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,11 +260,12 @@
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.2;
+				CURRENT_PROJECT_VERSION = 1.1.0;
 				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				MARKETING_VERSION = 1.0.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.1.0;
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kejunsung.icloudcontrolscript;
 				PRODUCT_NAME = "icloud-control-script";
 				SWIFT_VERSION = 5.0;
@@ -274,11 +279,12 @@
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.2;
+				CURRENT_PROJECT_VERSION = 1.1.0;
 				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				MARKETING_VERSION = 1.0.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.1.0;
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kejunsung.icloudcontrolscript;
 				PRODUCT_NAME = "icloud-control-script";
 				SWIFT_VERSION = 5.0;
