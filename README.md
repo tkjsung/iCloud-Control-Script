@@ -27,11 +27,17 @@ There are other ways to do this, such as using the ``brctl evict`` command in Te
 
 ## Repository Content
 
-There are three files, other than the project file, in this Xcode project folder. I couldn't figure out how to make another file the "main" file, so _main.swift_ calls on the class I wrote in _icloud_evict.swift_ to enable the remove local file functionality. The last file, _testing.swift_, is simply where I dumped all the testing code I used.
+There are five files, other than the project file, in this Xcode project folder.
+
+* _main.swift_: The main file, which calls on the file eviction class that is written in another file 
+* _icloud\_evict.swift_: Enables the functionality to remove local iCloud files.
+* _logging.swift_: Includes function that allows for logging when in debug mode.
+* _run\_terminal\_cmd.swift_: Includes function that allows Terminal commands to be ran via Xcode with Swift.
+* _testing.swift_: File for testing code. Serves no functionality.
 
 ## Environment
 
-This project is built with Xcode 14 for macOS 13 deployment. I cannot guarantee the code will work with earlier or later versions of macOS.
+This project is written in Swift 5, built with Xcode 14 for macOS 13 deployment. I cannot guarantee the code will work with earlier or later versions of macOS.
 
 ## Disclaimer
 
