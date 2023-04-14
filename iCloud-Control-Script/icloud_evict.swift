@@ -8,7 +8,6 @@
 import Foundation
 import FinderSync
 
-// TODO: Still need to figure out how to suppress NSLog output properly without messing up string formatting when outputting.
 
 class icloud_evict{
     var evict_total:Int, evict_succ:Int, evict_fail:Int
@@ -82,7 +81,7 @@ class icloud_evict{
             }
         }
         
-        NSLog("Items to evict: \(fileURLs.count)")
+        DLog("Items to evict: \(fileURLs.count)")
         self.evict_total = fileURLs.count
         
         //        for (index, item) in self.fileURLs.enumerated(){
@@ -95,7 +94,7 @@ class icloud_evict{
         /// Added skipped files display as some files will fail to evict due to macOS's package system.
         if self.skippedURLs.count != 0 {
             print("\n############\nThe following file(s) are skipped.\n")
-            for fileURL in self.skippedURLs{
+            for fileURL in self.skippedURLs {
                 print("* \(fileURL.path())")
             }
         }
@@ -104,28 +103,30 @@ class icloud_evict{
             print("\n############\nNo files to evict. Exit program.\n############\n")
         }
         else{
-            NSLog("Removing locally downloaded iCloud files.")
+            DLog("Removing locally downloaded iCloud files.")
             for target in self.fileURLs {
-                //                NSLog("REQUESTED: Local removal of \(target)")
-                NSLog("REQUESTED: Local removal of %@", "\(target)")
+                DLog("REQUESTED: Local removal of \(target)")
+//                NSLog("REQUESTED: Local removal of %@", "\(target)")
                 do {
                     try fm.evictUbiquitousItem(at: target)
                     //                    NSLog("EVICT SUCCESS: \(target)")
                     //                    var formatted_string = String(format: "2 EVICT SUCCESS: %@", arguments: [target as CVarArg])
                     //                    NSLog(formatted_string)
-                    NSLog("EVICT SUCCESS: %@", "\(target)")
+//                    NSLog("EVICT SUCCESS: %@", "\(target)")
+                    DLog("EVICT SUCCESS: \(target)")
                     self.evict_succ += 1
                 } catch {
                     //                    var formatted_string = String(format: "EVICT FAILED: %@ with error %@", arguments: [target as CVarArg, error as CVarArg])
                     //                    NSLog(formatted_string)
                     //                    NSLog("EVICT FAILED: \(target) with error \(error)")
-                    NSLog("EVICT FAILED: %@", "\(target)", "failed with error %@", "\(error)")
+//                    NSLog("EVICT FAILED: %@", "\(target)", "failed with error %@", "\(error)")
+                    DLog("EVICT FAILED: \(target) with error \(error)")
                     self.evict_fail += 1
                 }
             }
-            NSLog("EVICT_TOTAL: \(self.evict_total); EVICT_SUCC: \(self.evict_succ); EVICT_FAIL: \(self.evict_fail)")
+            DLog("EVICT_TOTAL: \(self.evict_total); EVICT_SUCC: \(self.evict_succ); EVICT_FAIL: \(self.evict_fail); EVICT_SKIP: \(self.skippedURLs.count)")
             print("############\nProcess complete.")
-            print("* Total files to evict: \(self.evict_total).\n* Successfully evicted: \(self.evict_succ).\n* Failed to evict: \(self.evict_fail).\n############\n")
+            print("* Total files to evict: \(self.evict_total).\n* Successfully evicted: \(self.evict_succ).\n* Failed to evict: \(self.evict_fail).\n* Skipped eviction: \(self.skippedURLs.count)\n############\n")
         }
         return
     }
