@@ -9,19 +9,18 @@
 
 import Foundation
 
-
-//TODO: The following has yet to be tested and is directly copied from ChatGPT Mar 23 Version.
 func run_terminal_cmd(filepath: String){
     
     let task = Process()
-    task.launchPath = "/bin/ls"
-    task.arguments = ["-l"]
+    task.launchPath = "/bin/zsh"  // new macOS versions use zsh as default shell environment
+    task.arguments = ["-c", "brctl evict \(filepath)"]
     
     let pipe = Pipe()
     task.standardOutput = pipe
     
-    task.launch()
+    task.launch() // launch the terminal at the launchPath with arguments as written above
     
+    // Print out terminal output with help of Pipe().
     let data = pipe.fileHandleForReading.readDataToEndOfFile()
     if let output = String(data: data, encoding: .utf8) {
         print(output)
