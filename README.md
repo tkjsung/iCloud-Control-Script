@@ -31,7 +31,7 @@ There are three files, other than the project file, in this Xcode project folder
 
 ## Environment
 
-This project is built with Xcode 14.2 for macOS 13.1 deployment. I cannot guarantee the code will work with earlier or later versions of macOS.
+This project is built with Xcode 14 for macOS 13 deployment. I cannot guarantee the code will work with earlier or later versions of macOS.
 
 ## Disclaimer
 
