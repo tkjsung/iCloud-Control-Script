@@ -83,6 +83,7 @@ class icloud_evict{
         
         DLog("Items to evict: \(fileURLs.count)")
         self.evict_total = fileURLs.count
+        print("Total files to evict: \(self.evict_total).")
         
         //        for (index, item) in self.fileURLs.enumerated(){
         //            print(index, ": ", item)

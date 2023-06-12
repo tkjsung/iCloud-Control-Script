@@ -9,11 +9,11 @@ import Foundation
 import FinderSync
 
 // TODO: Cleanup main.swift. Everything in here should either be put into a different file or be re-organized as functions in this file.
-// TODO: Next minor version update should add -h functionality.
+// TODO: Next minor version (.X update, not .X.X) update should add -h functionality.
 // TODO: After script launches without filepath in terminal, script prompts for filepath. Consider removing this so that filepath must be given at script launch (a.k.a. cmd_line_args should always have two elements in it instead of one)
 
 // Script Metadata
-var script_version = "1.1.0"
+var script_version = "1.1.1"
 
 // Necessary variables
 var dir_exist = false
@@ -22,7 +22,7 @@ let cmd_line_args = CommandLine.arguments  // First argument always the executab
 
 // Project Info: Manual Update (could not figure out how to do automatic using info.plist)
 print("\n############\niCloud Control Script")
-print("Version: \(script_version)\nDate: 2023-04-14")
+print("Version: \(script_version)\nDate: 2023-06-12")
 print("Copyright (c) 2023 by Tom Sung.\n############")
 
 

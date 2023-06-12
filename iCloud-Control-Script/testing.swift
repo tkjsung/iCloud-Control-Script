@@ -5,6 +5,9 @@
 //  Created by Tom Sung on 2023-01-18.
 //
 
+/// File is used for testing code
+/// FIle is currently unused in production
+
 import Foundation
 
 func test_filepath_string(){

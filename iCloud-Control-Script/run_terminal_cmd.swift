@@ -6,6 +6,7 @@
 //
 
 /// Purpose of this file is to run skipped URL files using Terminal's `brctl evict` command.
+/// FIle is currently unused in production
 
 import Foundation
 

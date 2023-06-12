@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31047ACE29E12A1800CD3221 /* run_terminal_cmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31047ACD29E12A1800CD3221 /* run_terminal_cmd.swift */; };
 		311005DA29E1313700D2C4F7 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311005D929E1313700D2C4F7 /* logging.swift */; };
 		31BB9B06297884B700D640C2 /* icloud_evict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB9B05297884B700D640C2 /* icloud_evict.swift */; };
 		31BB9B072978893800D640C2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D55E8D272F7EF200B643A2 /* main.swift */; };
@@ -133,7 +132,6 @@
 			files = (
 				31BB9B072978893800D640C2 /* main.swift in Sources */,
 				31BB9B06297884B700D640C2 /* icloud_evict.swift in Sources */,
-				31047ACE29E12A1800CD3221 /* run_terminal_cmd.swift in Sources */,
 				311005DA29E1313700D2C4F7 /* logging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,11 +262,11 @@
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.0;
+				CURRENT_PROJECT_VERSION = 1.1.1;
 				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kejunsung.icloudcontrolscript;
 				PRODUCT_NAME = "icloud-control-script";
@@ -283,11 +281,11 @@
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.0;
+				CURRENT_PROJECT_VERSION = 1.1.1;
 				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kejunsung.icloudcontrolscript;
 				PRODUCT_NAME = "icloud-control-script";
