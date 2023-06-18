@@ -127,7 +127,7 @@ class icloud_evict{
             }
             DLog("EVICT_TOTAL: \(self.evict_total); EVICT_SUCC: \(self.evict_succ); EVICT_FAIL: \(self.evict_fail); EVICT_SKIP: \(self.skippedURLs.count)")
             print("############\nProcess complete.")
-            print("* Total files to evict: \(self.evict_total).\n* Successfully evicted: \(self.evict_succ).\n* Failed to evict: \(self.evict_fail).\n* Skipped eviction: \(self.skippedURLs.count)\n############\n")
+            print("* Total files to evict: \(self.evict_total).\n* Successfully evicted: \(self.evict_succ).\n* Failed to evict: \(self.evict_fail).\n* Skipped eviction: \(self.skippedURLs.count).\n############\n")
         }
         return
     }
