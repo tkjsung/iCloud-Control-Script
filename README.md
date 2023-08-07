@@ -27,13 +27,14 @@ There are other ways to do this, such as using the ``brctl evict`` command in Te
 
 ## Repository Content
 
-There are five files, other than the project file, in this Xcode project folder.
+There are five files and one folder, other than the project file/folder, in this Xcode project.
 
 * _main.swift_: The main file, which calls on the file eviction class that is written in another file 
 * _icloud\_evict.swift_: Enables the functionality to remove local iCloud files.
 * _logging.swift_: Includes function that allows for logging when in debug mode.
-* _run\_terminal\_cmd.swift_: Includes function that allows Terminal commands to be ran via Xcode with Swift.
+* _run\_terminal\_cmd.swift_: Includes function that allows Terminal commands to be ran via Xcode with Swift. Currently serves no functionality.
 * _testing.swift_: File for testing code. Serves no functionality.
+* _Progress_ folder: Code taken from Justus Kandzi to enable progress bar functionality. [GitHub Repository Link Here](https://github.com/jkandzi/Progress.swift)
 
 ## Environment
 
