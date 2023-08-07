@@ -105,29 +105,20 @@ class icloud_evict{
         }
         else{
             DLog("Removing locally downloaded iCloud files.")
-            for target in self.fileURLs {
+            for target in Progress(self.fileURLs, configuration: [ProgressIndex(), ProgressBarLine(), ProgressPercent()]) {
                 DLog("REQUESTED: Local removal of \(target)")
-//                NSLog("REQUESTED: Local removal of %@", "\(target)")
                 do {
                     try fm.evictUbiquitousItem(at: target)
-                    //                    NSLog("EVICT SUCCESS: \(target)")
-                    //                    var formatted_string = String(format: "2 EVICT SUCCESS: %@", arguments: [target as CVarArg])
-                    //                    NSLog(formatted_string)
-//                    NSLog("EVICT SUCCESS: %@", "\(target)")
                     DLog("EVICT SUCCESS: \(target)")
                     self.evict_succ += 1
                 } catch {
-                    //                    var formatted_string = String(format: "EVICT FAILED: %@ with error %@", arguments: [target as CVarArg, error as CVarArg])
-                    //                    NSLog(formatted_string)
-                    //                    NSLog("EVICT FAILED: \(target) with error \(error)")
-//                    NSLog("EVICT FAILED: %@", "\(target)", "failed with error %@", "\(error)")
                     DLog("EVICT FAILED: \(target) with error \(error)")
                     self.evict_fail += 1
                 }
             }
             DLog("EVICT_TOTAL: \(self.evict_total); EVICT_SUCC: \(self.evict_succ); EVICT_FAIL: \(self.evict_fail); EVICT_SKIP: \(self.skippedURLs.count)")
             print("############\nProcess complete.")
-            print("* Total files to evict: \(self.evict_total).\n* Successfully evicted: \(self.evict_succ).\n* Failed to evict: \(self.evict_fail).\n* Skipped eviction: \(self.skippedURLs.count)\n############\n")
+            print("* Total files to evict: \(self.evict_total).\n* Successfully evicted: \(self.evict_succ).\n* Failed to evict: \(self.evict_fail).\n* Skipped eviction: \(self.skippedURLs.count).\n############\n")
         }
         return
     }
