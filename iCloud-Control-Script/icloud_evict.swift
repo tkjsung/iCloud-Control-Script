@@ -96,16 +96,18 @@ class icloud_evict{
         if self.skippedURLs.count != 0 {
             print("\n############\nThe following file(s) are skipped.\n")
             for fileURL in self.skippedURLs {
-                print("* \(fileURL.path())")
+                print("* \(fileURL.path())\n")
             }
+            print("############\n")
         }
         
         if self.evict_total == 0 {
             print("\n############\nNo files to evict. Exit program.\n############\n")
         }
         else{
+            print("############")
             DLog("Removing locally downloaded iCloud files.")
-            for target in Progress(self.fileURLs, configuration: [ProgressIndex(), ProgressBarLine(), ProgressPercent()]) {
+            for target in Progress(self.fileURLs, configuration: [ProgressString(string: "Progress: "), ProgressIndex(), ProgressBarLine(), ProgressPercent()]) {
                 DLog("REQUESTED: Local removal of \(target)")
                 do {
                     try fm.evictUbiquitousItem(at: target)
